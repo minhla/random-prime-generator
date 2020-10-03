@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Get Boon by Random</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+
+    <style>
+
+    </style>
+  </head>
+<body>
+ <div class="container h-100">
+   <div class="row col-12 d-flex text-center justify-content-center align-items-center flex-column" style="height: 100vh;">
+      <h1>Get Boon by Random</h1>
+
+
+     <h3>Idea by a member of Designveloper (DSV)</h3>
+
+      <% if (typeof(result) !== 'undefined' && result) { %>
+        <h2 style="color: pink;"><%= result %></h2>
+      <% } %>
+
+      <% if (typeof(message) !== 'undefined' && message) { %>
+        <h2><%= message %></h2>
+      <% } %>
+
+     <form method="post" action="/">
+       Generating a random integer between 1 and<br>
+       <% if (typeof(max_value) !== 'undefined' && max_value) { %>
+        <input type="number" name="max_value" value="<%=max_value%>" %><br>
+        <% } else{ %>  
+          <input type="number" name="max_value"  placeholder="Max Value"><br>
+       <% } %>
+       
+       <input type="submit" name="submit" value="Generate!">
+     </form>
+   </div>
+ </div>
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
