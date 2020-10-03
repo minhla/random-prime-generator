@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "production": "pm2 start app.js --name 'app-boon' --restart-delay=3000",
-    "dev": "nodemon  app.js"
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
