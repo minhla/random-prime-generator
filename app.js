@@ -1,8 +1,11 @@
-"use strict";
-
 var express = require("express");
 var app = express();
 var path = require("path");
+
+var server = require("http").createServer(app);
+app.set("port", process.env.HEROKU_NODEJS_PORT || process.env.PORT || 3333);
+app.set("ip", process.env.HEROKU_NODEJS_IP || process.env.IP || "0.0.0.0");
+
 app.use(express.static("static"));
 
 var bodyParser = require("body-parser");
@@ -72,8 +75,10 @@ app.post("/", async (req, res) => {
   res.render("index", { result: JSON.stringify(result), max_value });
 });
 
-var port = 3000;
-
-app.listen(port, (err) => {
-  console.log(`Running on port: ${port}`);
+server.listen(app.get("port"), app.get("ip"), function () {
+  console.log(
+    "Server listening at %s:%d ",
+    server.address().address,
+    server.address().port
+  );
 });
