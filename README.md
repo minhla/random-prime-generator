@@ -5,6 +5,7 @@ npm install
 
 npm run dev
 ```
+This website, as the name suggests, generates a random prime number in a given range.
 
 ## Demo
 
